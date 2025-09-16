@@ -76,10 +76,18 @@ export default function Header() {
       <div className="flex items-center justify-between">
         <div className="flex gap-10 items-center">
           <Image
-            src='/logo-light.png'
-            alt="logo"
+            src="/logo-light.png"
+            alt="Logo"
             width={36}
             height={36}
+            className="block dark:hidden"
+          />
+          <Image
+            src="/logo-dark.png"
+            alt="Logo"
+            width={36}
+            height={36}
+            className="hidden dark:block"
           />
           <div className="flex gap-2">
             <Avatar className="size-9">

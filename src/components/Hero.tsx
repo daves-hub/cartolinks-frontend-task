@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselApi } from "@/components/ui/carousel";
 import CarouselCard from "./CarouselCard";
 import { Button } from "./ui/button";
 import { ChevronLeft, ChevronRight, ImageUp } from "lucide-react";
