@@ -19,20 +19,20 @@ export default function ToolItem(tool: ToolItemProp) {
       key={tool.name}
       className="hover:bg-accent shadow-none border-0 bg-none transition"
     >
-      <CardContent className="flex items-center gap-4 p-4">
+      <CardContent className="flex items-center gap-2 sm:gap-4 p-2 sm:p-4">
         <Avatar>
-          <AvatarFallback className={`p-4 rounded-lg ${tool.avatarBackground}`}>
-            <tool.icon className={`h-8 w-8 ${tool.name === 'Train' ? 'text-black' : 'text-white'} dark:text-white`} />
+          <AvatarFallback className={`p-2 sm:p-4 rounded-lg ${tool.avatarBackground}`}>
+            <tool.icon className={`h-6 w-6 sm:h-8 sm:w-8 ${tool.name === 'Train' ? 'text-black' : 'text-white'} dark:text-white`} />
           </AvatarFallback>
         </Avatar>
-        <div>
-          <div className="flex gap-3 items-center">
-            <h3 className="font-semibold text-lg">{tool.name}</h3>{" "}
-            {tool.badge && <Badge className="rounded-full bg-blue-500 py-0 h-5">{tool.badge}</Badge>}
+        <div className="flex-1 min-w-0">
+          <div className="flex gap-2 sm:gap-3 items-center flex-wrap">
+            <h3 className="font-semibold text-sm sm:text-lg">{tool.name}</h3>
+            {tool.badge && <Badge className="rounded-full bg-blue-500 py-0 h-4 sm:h-5 text-xs">{tool.badge}</Badge>}
           </div>
-          <p className="text-sm text-gray-600">{tool.description}</p>
+          <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">{tool.description}</p>
         </div>
-        <Button variant="secondary" className="rounded-full ml-auto px-6 py-4">
+        <Button variant="secondary" className="rounded-full ml-auto px-3 sm:px-6 py-2 sm:py-4 text-xs sm:text-sm">
           Open
         </Button>
       </CardContent>

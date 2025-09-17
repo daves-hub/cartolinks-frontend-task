@@ -57,24 +57,24 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-light text-black p-6">
+      <div className="min-h-screen bg-light text-black p-3 sm:p-6">
         <Hero />
         <ToolSection />
-        <div className="flex justify-between items-center mt-6">
-          <h2 className="text-2xl text-accent-foreground font-semibold ">Gallery</h2>
-          <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 sm:mt-6 gap-3 sm:gap-0">
+          <h2 className="text-xl sm:text-2xl text-accent-foreground font-semibold">Gallery</h2>
+          <div className="flex gap-2 sm:gap-3">
             <Button
               variant="secondary"
-              className="gap-2 py-2 h-min w-min rounded-xl"
+              className="gap-1 sm:gap-2 py-1.5 sm:py-2 h-min w-min rounded-xl text-xs sm:text-sm px-3 sm:px-4"
             >
-              <Newspaper className="h-5! w-5!" />
+              <Newspaper className="h-4 w-4 sm:h-5 sm:w-5" />
               Legal
             </Button>
             <Button
               variant="secondary"
-              className="gap-2 py-2 h-min w-min rounded-xl"
+              className="gap-1 sm:gap-2 py-1.5 sm:py-2 h-min w-min rounded-xl text-xs sm:text-sm px-3 sm:px-4"
             >
-              <CreditCard className="h-4.5! w-4.5!" />
+              <CreditCard className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
               Pricing
             </Button>
           </div>

@@ -72,24 +72,25 @@ export default function Header() {
   const [activeNavAction, setActiveNavAction] = useState(0)
 
   return (
-    <header className="p-4">
+    <header className="p-2 sm:p-4">
       <div className="flex items-center justify-between">
-        <div className="flex gap-10 items-center">
+        {/* Logo and User Info */}
+        <div className="flex gap-2 sm:gap-10 items-center">
           <Image
             src="/logo-light.png"
             alt="Logo"
             width={36}
             height={36}
-            className="block dark:hidden"
+            className="block dark:hidden w-6 h-6 sm:w-9 sm:h-9"
           />
           <Image
             src="/logo-dark.png"
             alt="Logo"
             width={36}
             height={36}
-            className="hidden dark:block"
+            className="hidden dark:block w-6 h-6 sm:w-9 sm:h-9"
           />
-          <div className="flex gap-2">
+          <div className="hidden sm:flex gap-2">
             <Avatar className="size-9">
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
@@ -104,7 +105,9 @@ export default function Header() {
             </Select>
           </div>
         </div>
-        <nav className="flex p-1 gap-1 rounded-lg dark:bg-card bg-gray-200">
+
+        {/* Navigation - Hidden on mobile */}
+        <nav className="hidden lg:flex p-1 gap-1 rounded-lg dark:bg-card bg-gray-200">
           {navActions.map((action, index) => (
             <Tooltip key={index}>
               <TooltipTrigger asChild>
@@ -118,14 +121,17 @@ export default function Header() {
             </Tooltip>
           ))}
         </nav>
-        <div className="flex gap-2">
-          <Button variant='secondary' className="gap-2 py-2 h-min w-min rounded-xl">
+
+        {/* Right side actions */}
+        <div className="flex gap-1 sm:gap-2">
+          {/* Hide some buttons on mobile */}
+          <Button variant='secondary' className="hidden sm:flex gap-2 py-2 h-min w-min rounded-xl">
             <ImageIcon className="h-5! w-5!"/>
-            Gallery
+            <span className="hidden md:inline">Gallery</span>
           </Button>
-          <Button variant='secondary' className="gap-2 py-2 h-min w-min rounded-xl">
+          <Button variant='secondary' className="hidden md:flex gap-2 py-2 h-min w-min rounded-xl">
             <Headset className="h-4.5! w-4.5!"/>
-            Suport
+            <span className="hidden lg:inline">Support</span>
           </Button>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -156,7 +162,7 @@ export default function Header() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Avatar className="size-9">
+          <Avatar className="size-7 sm:size-9">
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>DH</AvatarFallback>
           </Avatar>
